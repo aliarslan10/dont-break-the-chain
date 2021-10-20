@@ -3,6 +3,7 @@ package com.example.aliarslan.dontbreakthechain.service;
 import com.example.aliarslan.dontbreakthechain.model.Authority;
 import com.example.aliarslan.dontbreakthechain.model.Role;
 import com.example.aliarslan.dontbreakthechain.model.User;
+import com.example.aliarslan.dontbreakthechain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,11 +19,11 @@ import java.util.List;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    UserService userService;
+    UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userService.findByUsername(username);
+        User user = userRepository.findByUsernameOrMailAddress(username);
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }

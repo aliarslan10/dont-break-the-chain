@@ -1,9 +1,9 @@
 package com.example.aliarslan.dontbreakthechain.security;
 
+import com.example.aliarslan.dontbreakthechain.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import com.example.aliarslan.dontbreakthechain.model.User;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

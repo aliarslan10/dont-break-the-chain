@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  dbc-app:
+    build: .
+    depends_on:
+      - dbc-mysql
+    image: dontbreakthechain
+    ports:
+      - "8085:8080"
+    environment:
+      APP_DB_URL: "dbc-mysql"
+      APP_DB_PASSWORD: "password"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 5
+  dbc-mysql:
+    image: mysql
+    platform: linux/amd64
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
