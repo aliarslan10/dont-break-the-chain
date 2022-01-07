@@ -47,4 +47,4 @@ This project is licensed under the MIT License.
 
 ### Author
 
-[Ali Arslan](https://www.linkedin.com/in/aliarslan10)
+[Ali Arslan](https://aliarslan.blogkafem.net/)
